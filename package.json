@@ -1,19 +1,31 @@
 {
-  "name": "sample-react",
-  "version": "0.1.0",
+  "name": "dungeon-test",
+  "version": "1.0.0",
   "private": true,
+  "main": "./src/index.js",
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
+    "@mui/core": "^5.0.0-alpha.49",
+    "@mui/icons-material": "^5.0.1",
+    "@mui/lab": "^5.0.0-alpha.49",
+    "@mui/material": "^5.0.2",
+    "@testing-library/jest-dom": "^5.15.0",
+    "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^7.1.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-scripts": "3.3.1",
-    "serve": "^11.3.2"
+    "date-fns": "^2.24.0",
+    "emojilib": "^3.0.4",
+    "node-sass": "^6.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.0.2",
+    "react-scripts": "4.0.3",
+    "serve": "^13.0.2",
+    "twemoji-parser": "^13.1.0"
   },
   "scripts": {
-    "start": "node sammy.js; serve -s _static -l tcp://0.0.0.0:$PORT -n",
-    "build": "rm -r _static 2>/dev/null; node sammy.js; react-scripts build && mv build _static",
+    "start": "node sammy.js && serve -s _static -l tcp://0.0.0.0:$PORT -n",
+    "build": "node ./build_scripts/clean.js && node sammy.js && react-scripts build && node ./build_scripts/move.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -31,5 +43,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "engines": {
+    "node": "14.x"
   }
 }
