@@ -4,7 +4,7 @@ export default function App() {
 
 	return (
 		<div>
-			Hello World!
+			Hello World! YES
 		</div>
 	);
 };
